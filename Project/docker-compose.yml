@@ -1,0 +1,86 @@
+# version: '3.8'
+
+networks:
+  transcendence:
+    driver: bridge
+
+volumes:
+  web_data:
+    driver: local
+  db_data:
+    driver: local
+  front_data:
+    driver: local
+  static_volume:
+
+services:
+  backend:
+    container_name: container_user_managemant
+    build:
+      context: ./services/user_management/
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+      - redis
+    restart: always
+    networks:
+      - transcendence
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - web_data:/app/
+      - static_volume:/app/media/avatars
+
+  postgres:
+    container_name: container_postgres
+    build:
+      context: ./services/postgres/
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - transcendence
+    expose:
+      - "5432"
+    env_file:
+      - .env
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  redis:
+    container_name: container_redis
+    build:
+      context: ./services/redis/
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - transcendence
+    expose:
+      - "6379"
+    env_file:
+      - .env
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./services/front/
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - transcendence
+    depends_on:
+      - backend
+      - postgres
+      - redis
+    expose:
+      - "443"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - front_data:/var/www/html/
+      - static_volume:/var/www/html/media/avatars
+# docker rm -f $(docker ps -aq) && docker rmi $(docker images -q) &&  docker volume prune && docker compose down -v

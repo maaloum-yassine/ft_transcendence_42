@@ -1,0 +1,201 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background: #000;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	color: #fff;
+	position: relative;
+}
+
+.background-circles {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 200%;
+	height: 200%;
+	background: radial-gradient(circle, rgba(255, 140, 0, 0.2), transparent 70%);
+	border-radius: 50%;
+	animation: pulse 3s infinite;
+	z-index: 0;
+}
+
+@keyframes pulse {
+	0%, 100% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+	50% {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+}
+
+.signup-container {
+	position: relative;
+	background-color: rgba(255, 140, 0, 0.9);
+	padding: 40px;
+	border-radius: 20px;
+	box-shadow: 0 8px 32px rgba(255, 140, 0, 0.3);
+	text-align: center;
+	width: 500px;
+	z-index: 1;
+	backdrop-filter: blur(8px);
+}
+
+.signup-container h1 {
+	margin-bottom: 25px;
+	font-size: 32px;
+	color: #000;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+	display: flex;
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.input-group input {
+	flex: 1;
+	margin: 0;
+}
+
+.signup-container input {
+	width: 100%;
+	padding: 12px 15px;
+	margin-bottom: 15px;
+	border: 2px solid transparent;
+	border-radius: 10px;
+	font-size: 16px;
+	background-color: rgba(255, 255, 255, 0.95);
+	transition: all 0.3s ease;
+	box-sizing: border-box;
+}
+
+.signup-container input:focus {
+	outline: none;
+	border-color: #000;
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+}
+
+.signup-container input::placeholder {
+	color: #666;
+	transition: color 0.3s ease;
+}
+
+.signup-container input:focus::placeholder {
+	color: #999;
+}
+
+.signup-container button {
+	width: 100%;
+	padding: 15px;
+	margin: 10px 0 20px;
+	background-color: #000;
+	border: none;
+	border-radius: 10px;
+	color: orange;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.signup-container button:hover {
+	background-color: #222;
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.login-container .footer {
+margin-top: 30px;
+font-size: 16px;
+}
+
+
+.footer a {
+color: #000;
+text-decoration: none;
+font-weight: bold;
+padding: 5px 10px;
+border-radius: 5px;
+transition: all 0.3s;
+}
+
+.login-container .footer a:hover {
+background-color: rgba(0, 0, 0, 0.1);
+text-decoration: none;
+}
+
+.ball {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: orange;
+	border-radius: 50%;
+	z-index: -1;
+	animation: bounceBall 10s infinite linear;
+	box-shadow: 0 0 20px rgba(255, 140, 0, 0.8);
+}
+
+@keyframes bounceBall {
+	0% {
+		top: 10%;
+		left: 10%;
+		transform: translate(0, 0);
+	}
+	25% {
+		top: 90%;
+		left: 90%;
+		transform: translate(-50%, -50%) rotate(180deg);
+	}
+	50% {
+		top: 10%;
+		left: 90%;
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+	75% {
+		top: 90%;
+		left: 10%;
+		transform: translate(-50%, -50%) rotate(540deg);
+	}
+	100% {
+		top: 10%;
+		left: 10%;
+		transform: translate(0, 0) rotate(720deg);
+	}
+}
+.typing {
+color: #000;
+border-right: 0.15rem solid orange;
+font-size: 3.7em;
+font-family: Arial, sans-serif;
+white-space: nowrap;
+overflow: hidden;
+animation: typing 1s steps(20, end) 1, blink 0.75s step-end infinite;  /* L'animation blink pour faire clignoter le curseur */
+margin-bottom: 20px;
+}
+
+@keyframes typing {
+0% { width: 0; }
+100% { width: 100%; }
+}
+
+@keyframes blink {
+0%, 50% { border-color: transparent; }  /* Le curseur devient invisible à mi-temps */
+100% { border-color: orange; }  /* Le curseur redevient visible à la fin */
+}
+
+
+

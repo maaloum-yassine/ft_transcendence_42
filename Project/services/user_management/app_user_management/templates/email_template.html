@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vérification de Compte - Ping Pong Game</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffa500; /* Orange vif */
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        background: #000000; /* Noir */
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+      }
+      h1 {
+        color: #ffa500; /* Orange vif */
+        font-size: 26px;
+        margin-bottom: 20px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      p {
+        color: #ffffff; /* Blanc pour contraste */
+        line-height: 1.6;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      .button {
+        display: inline-block;
+        padding: 15px 25px;
+        color: #000000; /* Noir */
+        background-color: #ffa500; /* Orange vif */
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        font-weight: bold;
+        transition: all 0.3s;
+        text-align: center;
+        border: 2px solid #ffffff; /* Bordure blanche */
+      }
+      .button:hover {
+        background-color: #ffffff; /* Blanc au survol */
+        color: #000000;
+      }
+      .footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #ff6600; /* Orange vif */
+        text-align: center;
+        border-top: 1px solid #ff6600;
+        padding-top: 15px;
+        line-height: 1.6;
+      }
+      .footer p {
+        margin: 5px 0;
+        color: #ffa500; /* Orange vif */
+      }
+      /* Style pour l'URL de vérification */
+      .verification-link {
+        color: #ffffff;
+        word-break: break-all;
+        font-size: 12px;
+        opacity: 0.7;
+      }
+      /* Responsive styles */
+      @media (max-width: 600px) {
+        .container {
+          padding: 20px;
+        }
+        .button {
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Hello 👋
+        <p>Password reset 🏓</p>
+      </h1>
+
+      <p>You have requested to reset your password for Ping Pong Game</p>
+      <div style="text-align: center">
+        <a href="{{ reset_link }}" class="button">Reset password</a>
+      </div>
+      <p>
+        If the button does not work, copy and paste the following link into your
+        browser :
+      </p>
+      <p class="verification-link"><strong>{{ reset_link }}</strong></p>
+      <p>Thank you, and we look forward to having you with us. !</p>
+      <div class="footer">
+        <p>Sincerely,</p>
+        <p>The Ping Pong Support Team</p>
+      </div>
+    </div>
+  </body>
+</html>

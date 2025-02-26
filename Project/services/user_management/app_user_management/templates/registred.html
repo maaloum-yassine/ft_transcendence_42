@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Reset - Ping Pong Game</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #ffa500; /* Orange */
+      }
+
+      .email-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #000000; /* Black */
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+      }
+
+      .email-header {
+        background-color: #ffa500; /* Orange */
+        padding: 20px;
+        text-align: center;
+        background-color: #000000;
+      }
+
+      .email-header img {
+        width: 100px;
+        height: auto;
+        border-radius: 50%;
+        border: 3px solid #ffffff;
+      }
+
+      .email-body {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .email-body h1 {
+        color: #ffffff;
+        font-size: 24px;
+      }
+
+      .email-body p {
+        color: #ffffff; /* White for contrast */
+        font-size: 16px;
+        margin: 0 0 20px;
+        line-height: 1.6;
+      }
+
+      .reset-link {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #ffa500; /* Orange */
+        color: #000000; /* Black */
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        border: 2px solid #ffffff; /* White border */
+        transition: all 0.3s;
+      }
+
+      .reset-link:hover {
+        background-color: #ffffff; /* White on hover */
+        color: #000000;
+      }
+
+      .email-footer {
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #ffa500; /* Orange */
+        background-color: #000000; /* Black */
+        border-top: 1px solid #ff6600;
+      }
+
+      .verification-link {
+        color: #ffffff;
+        word-break: break-all;
+        font-size: 12px;
+        opacity: 0.7;
+        margin-top: 15px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="email-header">
+        <img
+          src="https://img.freepik.com/vecteurs-libre/logo-tennis-table-detaille_23-2148653818.jpg"
+          alt="Ping Pong Game Logo"
+        />
+      </div>
+      <div class="email-body">
+        <h1>Hello 👋</h1>
+        <p>
+          <b>You have requested to reset your password for Ping Pong Game.</b>
+        </p>
+        <p>Click the link below to reset your password:</p>
+        <div style="text-align: center">
+          <a href="{{ reset_link }}" class="reset-link">Reset Password</a>
+        </div>
+        <p class="verification-link">
+          If the button doesn't work, copy and paste this link: {{ reset_link }}
+        </p>
+      </div>
+      <div class="email-footer">
+        <p>Ping Pong Game - Support Team</p>
+      </div>
+    </div>
+  </body>
+</html>

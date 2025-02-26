@@ -1,0 +1,12 @@
+<h1>Game Details: {{ game }}</h1>
+
+<p>Players: {{ game.players.all|join:", " }}</p>
+<p>Winner: {{ game.winner }}</p>
+
+<h2>Goals</h2>
+<ul>
+    {% for goal in goals %}
+        <li>{{ goal.player }} scored at {{ goal.time_scored }}</li>
+    {% endfor %}
+</ul>
+

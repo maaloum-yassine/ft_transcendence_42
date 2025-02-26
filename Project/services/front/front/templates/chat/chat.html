@@ -1,0 +1,106 @@
+<div id="signInFeedbackContainer">
+	<div id="signInFeedBackHolder">
+	  <h2 id="signInFeedBackTitle">Error</h2>
+	  <p id="signInFeedBackDesc">
+		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis expedita
+		perfere
+	  </p>
+	  <button type="button" id="hideSignInFeedBack">Ok</button>
+	</div>
+  </div>
+
+<header class="header-area header-sticky">
+	<div class="container">
+	   <div class="row">
+		  <div class="col-12">
+			 <nav class="main-nav">
+				<!-- ***** Logo Start ***** -->
+				<a href="/home" class="logo">
+				<img src="images/TR-logo.png" alt="" />
+				</a>
+				<!-- ***** Logo End ***** -->
+				<!-- ***** Menu Start ***** -->
+				<ul class="nav">
+				   <li>
+					  <a href="/home">Home <img src="images/home.png" alt="" /></a>
+				   </li>
+				   <li>
+					  <a href="/profile"
+						 >Profile <img src="images/profile-header.jpg" alt=""
+						 /></a>
+				   </li>
+				   <li>
+					  <a href="/friend"
+						 >Friends <img src="images/friends-icon.png" alt=""
+						 /></a>
+				   </li>
+				   <li>
+					  <a href="/chat"
+						 >Messages <img src="images/message.png" alt=""
+						 /></a>
+				   </li>
+				   <li>
+					  <a href="/deblock_page"
+						 >List_Block <img src="images/friends-icon.png" alt=""
+						 /></a>
+				   </li>
+				   <li>
+					  <a href="/edit"
+						 >Settings <img src="images/settings.png" alt=""
+						 /></a>
+				   </li>
+				   <li>
+					  <a href="/" id="logoutLink">
+					  Log out <img src="images/logout.png" alt="logout" />
+					  </a>
+				   </li>
+				</ul>
+				<a class="menu-trigger">
+				<span>Menu</span>
+				</a>
+				<!-- ***** Menu End ***** -->
+			 </nav>
+		  </div>
+	   </div>
+	</div>
+ </header>
+ <div class="page-content">
+	<div class="container-chat">
+	   <!-- Friend List Slide -->
+	   <div class="slide" id="friend-list">
+		  <h2>Friends</h2>
+		  <!-- search bar -->
+		  <div class="wrap">
+			 <div class="search">
+				<input
+				   type="text"
+				   class="searchTerm"
+				   placeholder="What are you looking for?"
+				   />
+				<button type="submit" class="searchButton" disabled>
+				search
+				<i class="fa fa-search"></i>
+				</button>
+			 </div>
+		  </div>
+		  <ul id="friends">
+			 <!-- Dynamically populated -->
+		  </ul>
+	   </div>
+	   <!-- Chat Interface Slide -->
+	   <div class="slide" id="chat">
+		  <div class="chat-window" id="chat-window"></div>
+		  <div class="chat-input">
+			 <input type="text" id="message-input" placeholder="Type a message...">
+			 <button id="send-button" class="button">Send</button>
+		  </div>
+	   </div>
+	   <div class="slide" id="contact-details">
+		  <img class="chat_imgprofile" id="contact-image" src="" alt="_">
+		  <div id="contact-info">
+		  </div>
+	   </div>
+	</div>
+	<div id="particles-js" class="particles"></div>
+ </div>
+ 

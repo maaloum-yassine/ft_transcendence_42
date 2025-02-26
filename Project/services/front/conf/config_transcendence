@@ -1,0 +1,65 @@
+server {
+    listen 80;
+    server_name 127.0.0.1 localhost; 
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name 127.0.0.1;  
+    ssl_certificate /etc/nginx/certificate/transcendence.crt;
+    ssl_certificate_key /etc/nginx/certificate/transcendence.key;
+	ssl_protocols TLSv1.2 TLSv1.3;
+    root /var/www/html/;
+    index index.html;
+ 	include /etc/nginx/mime.types;
+
+    location / {
+
+        add_header Access-Control-Allow-Origin $http_origin always;
+        add_header Access-Control-Allow-Credentials "true" always;
+        add_header Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE" always;
+        add_header Access-Control-Allow-Headers "Authorization, Content-Type" always;
+        
+        try_files $uri $uri/ /index.html;
+    }
+   
+
+    location /ws/ {
+        proxy_pass http://container_user_managemant:8000; # Replace with your Django ASGI server URL
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # Increase timeouts for long-lived WebSocket connections
+        proxy_read_timeout 60s;
+        proxy_send_timeout 60s;
+    }
+
+    
+
+     location /api {
+         proxy_pass http://container_user_managemant:8000;
+         proxy_set_header Host $host;
+         proxy_set_header X-Real-IP $remote_addr;
+         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+         proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+       # Serve les fichiers statiques (si nécessaire)
+    location /media/ {
+        alias /var/www/html/media/;  # Assurez-vous que ce dossier existe et est monté correctement
+    }
+
+
+    
+   location /nginx_status
+    {
+      stub_status on;
+    }
+}

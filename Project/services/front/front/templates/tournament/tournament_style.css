@@ -1,0 +1,149 @@
+#tournamentContainer {
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  overflow: hidden;
+}
+#tournamentContainer #tournamentStepsContainer {
+  width: 100%;
+  transition: 700ms;
+}
+#tournamentContainer #tournamentStepsContainer .stepHolder {
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#tournamentContainer #tournamentStepsContainer .stepHolder .tournamentCard {
+  background: rgba(32, 152, 238, 0.19);
+  border: 1px solid rgba(32, 152, 238, 0.61);
+  width: 400px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  row-gap: 20px;
+}
+#tournamentContainer #tournamentStepsContainer .stepHolder .tournamentCard h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+#tournamentContainer #tournamentStepsContainer .stepHolder .tournamentCard p {
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+#tournamentContainer #tournamentStepsContainer .stepHolder .tournamentCard button {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  background: none;
+  background-color: #0f8e72;
+  border: none;
+  padding: 10px 50px;
+  border-radius: 5px;
+}
+#tournamentContainer #tournamentStepsContainer #addPlayerForm {
+  background: rgba(32, 152, 238, 0.19);
+  border: 1px solid rgba(32, 152, 238, 0.61);
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  row-gap: 20px;
+}
+#tournamentContainer #tournamentStepsContainer #addPlayerForm h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+#tournamentContainer #tournamentStepsContainer #addPlayerForm input {
+  background: rgba(32, 152, 238, 0.19);
+  border: 1px solid rgba(32, 152, 238, 0.61);
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  width: 90%;
+  font-family: "Poppins", sans-serif;
+}
+#tournamentContainer #tournamentStepsContainer #addPlayerForm .otpInput {
+  display: none;
+}
+#tournamentContainer #tournamentStepsContainer #addPlayerForm button {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  background: none;
+  background-color: #0f8e72;
+  border: none;
+  padding: 10px 50px;
+  border-radius: 5px;
+}
+#tournamentContainer #tournamentStepsContainer #gameInterface {
+  width: 100%;
+  height: 100svh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  row-gap: 30px;
+}
+#tournamentContainer #tournamentStepsContainer #gameInterface .score-board {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+#tournamentContainer #tournamentStepsContainer #gameInterface .score-board .playerInfosHolder {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+#tournamentContainer #tournamentStepsContainer #gameInterface .score-board .playerInfosHolder span {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+}
+#tournamentContainer #tournamentStepsContainer #gameInterface .score-board #vs {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+#tournamentContainer #tournamentStepsContainer #gameInterface #gameCanvas {
+  background: #191f38;
+  /* border: 1px solid rgba(32, 152, 238, 0.61); */
+  /* border-radius: 10px; */
+}
+#tournamentContainer #tournamentStepsContainer #winnerContainer {
+  width: 400px;
+  padding: 10px;
+  background: rgba(32, 152, 238, 0.19);
+  border: 1px solid rgba(32, 152, 238, 0.61);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  row-gap: 20px;
+}
+#tournamentContainer #tournamentStepsContainer #winnerContainer h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+#tournamentContainer #tournamentStepsContainer #winnerContainer span {
+  color: greenyellow;
+  font-family: "Poppins", sans-serif;
+}
+#tournamentContainer #tournamentStepsContainer #winnerContainer a {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  background: rgba(32, 152, 238, 0.19);
+  border: 1px solid rgba(32, 152, 238, 0.61);
+  padding: 10px 40px;
+  border-radius: 5px;
+}/*# sourceMappingURL=tournament.css.map */

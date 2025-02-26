@@ -1,0 +1,157 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+}
+
+#content_err_signup .background-circles_err_signup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.2), transparent 70%);
+  border-radius: 50%;
+  animation: pulse 3s infinite;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+#content_err_signup .error-container_err_signup {
+  position: relative;
+  background-color: rgba(255, 140, 0, 0.9);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(255, 140, 0, 0.3);
+  text-align: center;
+  width: 500px;
+  z-index: 1;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+#content_err_signup .error-container_err_signup h1 {
+  /* margin-bottom: 25px; */
+  font-size: 32px;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.typing_err_signup {
+  color: #000;
+  border-right: 0.15rem solid orange;
+  font-size: 2.1em;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1s steps(20, end) 1, blink 0.75s step-end infinite;
+  /* margin-bottom: 20px; */
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: orange;
+  }
+}
+
+#content_err_signup .error-container_err_signup button,
+#goSignInLink {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0 20px;
+  background-color: #000;
+  border: none;
+  border-radius: 10px;
+  color: orange;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#goSignInContainer {
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid red; */
+  /* padding: 30px 0px 10px 0px; */
+}
+
+#goSignUpSecondLink {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: blue;
+}
+
+#goSignInLink {
+  display: block;
+  width: 250px;
+  text-decoration: none;
+  margin: 0;
+}
+
+#content_err_signup .error-container_err_signup {
+  color: RED;
+  font-size: 18px;
+}
+
+#content_err_signup .error-container_err_signup button:hover {
+  background-color: #222;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#content_err_signup .footer_err_signup {
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+#content_err_signup .footer a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+#content_err_signup .footer a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}

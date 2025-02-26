@@ -1,0 +1,178 @@
+
+/* Background Styling */
+
+.background-circles {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures it takes the full height of the viewport */
+    position: relative;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+/* Centered container-friend */
+.container-friend {
+    position: relative;
+    background-color: #1f2122; /* Vibrant orange */
+    padding: 70px;
+    border-radius: 23px;
+    box-shadow: 0 15px 40px rgba(255, 140, 0, 0.6);
+    text-align: center;
+    width: 680px; /* Full width */
+    /* max-width: 2000px; */
+    z-index: 1;
+    backdrop-filter: blur(12px);
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+	transition: box-shadow 0.3s ease;
+}
+
+.container-friend:hover {
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Header */
+.container-friend h2 {
+	font-family: 'Poppins', sans-serif;
+    margin-bottom: 40px;
+    font-size: 29px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* User List */
+.user-list {
+    max-height: 600px;
+    overflow-y: scroll; /* Enable scrolling */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+    padding: 10px 0;
+    width: 100%; /* Stretching the user list */
+}
+
+.user-list::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
+}
+
+/* User Block */
+.user {
+    background-color: rgba(0, 0, 0, 0.75); /* Dark block with transparency */
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    width: 100%; /* Adjust to container-friend width */
+    max-width: 1800px; /* Increase maximum block width */
+}
+
+/* User Image */
+.user img {
+    width: 120px; /* Increased size */
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.8); /* Glowing effect */
+}
+
+/* User Name */
+.user p {
+    margin: 0 20px;
+    font-size: 24px;
+    color: #fff;
+    text-align: left;
+    flex-grow: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Buttons */
+.chat-user-btn, .reject-btn {
+	padding: 6px 10px;
+	font-size: 15px;
+	border-radius: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	border: none;
+	transition: all 0.3s ease-in-out;
+}
+
+/* Accept Button */
+.chat-user-btn {
+    background: linear-gradient(45deg, #4caf50, #81c784); /* Green gradient */
+    color: white;
+}
+
+.chat-user-btn:hover {
+    background: linear-gradient(45deg, #388e3c, #4caf50);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(72, 239, 72, 0.5);
+}
+
+/* Reject Button */
+.reject-btn {
+    background-color: red;
+    color: white;
+    border-radius: 15px;
+}
+
+.reject-btn:hover {
+    background-color: darkred;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(239, 72, 72, 0.5);
+}
+
+/* Search Input */
+#search-input {
+    padding: 4px;
+  	border: 3px solid rgba(255, 255, 255, 0.8);
+  	border-radius: 15px;
+  	font-size: 19px;
+  	width: 74%;
+  	max-width: 1800px;
+  	background: rgba(255, 255, 255, 0.9);
+  	color: #000;
+  	outline: none;
+  	margin-bottom: 42px;
+  	transition: all 0.3s ease-in-out;
+  	margin-top: 10%;
+}
+
+#search-input:focus {
+    border-color: rgba(255, 140, 0, 1);
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
+    transform: translateY(-3px);
+}
+
+/* Toggle Button */
+.toggle-btn {
+    padding: 25px 60px;
+    font-size: 22px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease-in-out;
+    width: 98%; /* Full width */
+    max-width: 1800px; /* Increased maximum width */
+}
+
+.toggle-btn:hover {
+    background: linear-gradient(45deg, #ff5722, #ff9800);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.6);
+}
