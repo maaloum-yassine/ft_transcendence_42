@@ -1,15 +1,9 @@
 import { urlLocationHandler } from "./url-router.js";
 
 const logout = () => {
-  // Sélectionner le lien de déconnexion
   const logoutLink = document.getElementById("logoutLink");
-
-  // Ajouter l'événement 'click' pour déclencher la fonction de déconnexion
   logoutLink.addEventListener("click", (event) => {
-    // Empêcher le comportement par défaut du lien (navigation)
     event.preventDefault();
-
-    // Appeler la fonction de déconnexion
     handleLogout();
   });
 };
@@ -23,7 +17,7 @@ const handleLogout = () => {
     headers: {
       "Content-Type": "application/json",
     },
-    credentials: "include", // Inclure les cookies pour la déconnexion
+    credentials: "include",
   })
     .then((response) => {
       if (!response.ok) {
@@ -35,7 +29,6 @@ const handleLogout = () => {
       history.pushState(null, "", "/signin");
       urlLocationHandler();
       console.log("Déconnexion réussie:", data);
-      // window.location.href = "/"; // Redirection vers la page d'accueil après la déconnexion
     })
     .catch((error) => {
       console.error("Erreur lors de la déconnexion:", error);

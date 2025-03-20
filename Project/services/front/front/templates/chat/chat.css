@@ -5,7 +5,7 @@
 	text-align: center;
 } */
 /* #contact-image {
-	display: block; 
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
   } */
@@ -13,13 +13,34 @@
 	text-align: center;
 	color: #fff;
 }
+.header-container {
+  display: flex
+;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #272d33;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+.back-button {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.back-button:hover {
+  transform: scale(1.2);
+}
+
 #contact-image{
 	display: block;
   margin: 0 auto;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-}  
+}
 #chat-window {
   height: 400px;
   overflow-y: auto;
@@ -66,7 +87,7 @@ body {
   height: 100vh;
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
-  /* background: linear-gradient(135deg, rgba(255, 105, 0, 1), rgba(0, 0, 0, 1)); */
+  background: #1f2122;
   background-size: 200% 200%;
   animation: chat_gradientPulse 4s ease infinite;
   position: relative;
@@ -98,7 +119,7 @@ body {
 .slide {
   flex: 1;
   display: flex;
-  background-color: #1f2122;
+  /*background-color: #1f2122;*/
   flex-direction: column;
   padding: 33px;
   overflow-y: auto;
@@ -171,6 +192,7 @@ h2 {
   border: none;
   outline: none;
   background-color: #222;
+  font-size:18px;
   color: white;
 }
 
@@ -214,13 +236,14 @@ h2 {
 
 .searchTerm {
   width: 100%;
-  border: 3px solid orange!important;
+  font-size: 19px;
+  border: 3px solid orange;
   border-right: none;
   padding: 15px;
-  height: 20px;
+  height: 16px;
   border-radius: 12px 12px 12px 12px;
   outline: none;
-  color: #ffa500;
+  color: rgb(0, 0, 0);
   background-color: #fff;
 }
 
@@ -368,11 +391,11 @@ h2 {
 	transition: all 0.2s ease;
 
   }
-  
+
   .chat-button :active {
 	transform: scale(0.96);
   }
-  
+
   .chat-button :before,
   .chat-button :after {
 	position: absolute;
@@ -384,7 +407,7 @@ h2 {
 	z-index: -1000;
 	background-repeat: no-repeat;
   }
-  
+
   .chat-button :hover:before {
 	top: -70%;
 	background-image: radial-gradient(circle, #f5a31e 20%, transparent 20%),
@@ -426,3 +449,5 @@ h2 {
 	/* background-color: #fff; */
 	/* opacity: 50%; */
   }
+
+

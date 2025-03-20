@@ -85,10 +85,10 @@ img {
   overflow: hidden;
 }
 
-/* 
+/*
 ---------------------------------------------
 Global Styles
---------------------------------------------- 
+---------------------------------------------
 */
 html,
 body {
@@ -96,7 +96,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-body .page-content {
+body .page-content_home {
   margin-top: 110px;
   background-color: #feab10;
   /* background-color: #27292a; */
@@ -122,7 +122,7 @@ p {
 }
 
 .templatemo-item {
-	max-width: 80px; 
+	max-width: 80px;
 	border-radius: 23px;
 }
 
@@ -196,10 +196,10 @@ section {
   text-decoration: underline;
 }
 
-/* 
+/*
 ---------------------------------------------
 Pre-loader Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .js-preloader {
@@ -298,10 +298,10 @@ Pre-loader Style
 
 
 
-/* 
+/*
 ---------------------------------------------
 Header Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .background-header {
@@ -738,10 +738,10 @@ Header Style
   }
 }
 
-/* 
+/*
 ---------------------------------------------
 Banner Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .main-banner {
@@ -777,10 +777,10 @@ Banner Style
   color: #ecb460;
 }
 
-/* 
+/*
 ---------------------------------------------
 Most Popular Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .most-popular {
@@ -853,10 +853,10 @@ Most Popular Style
   margin-bottom: -53px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Gaming Library Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .gaming-library {
@@ -925,10 +925,10 @@ Gaming Library Style
   margin-bottom: -53px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Footer Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 footer p {
@@ -947,10 +947,10 @@ footer p a:hover {
   color: #ecb460;
 }
 
-/* 
+/*
 ---------------------------------------------
 Featured Games Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .featured-games {
@@ -1125,10 +1125,10 @@ Featured Games Style
   font-size: 15px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Start Stream Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .start-stream .heading-section {
@@ -1155,10 +1155,10 @@ Start Stream Style
   margin-top: 30px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Live Stream Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .live-stream {
@@ -1179,7 +1179,7 @@ Live Stream Style
 }
 
 .live-stream .thumb img {
-  border-radius: 23px; 
+  border-radius: 23px;
 }
 
 .live-stream .thumb:hover .hover-effect {
@@ -1193,7 +1193,7 @@ Live Stream Style
   transition: all .4s;
 }
 
-.live-stream .hover-effect .live a { 
+.live-stream .hover-effect .live a {
   position: absolute;
   background-color: rgba(236, 96, 144, 0.9);
   padding: 5px 10px;
@@ -1258,10 +1258,10 @@ Live Stream Style
   margin-bottom: -53px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Featured Banner Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .feature-banner .thumb {
@@ -1286,10 +1286,10 @@ Featured Banner Style
   color: #ecb460;
 }
 
-/* 
+/*
 ---------------------------------------------
 Game Details Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .game-details h2 {
@@ -1381,12 +1381,12 @@ Game Details Style
 .game-details .main-border-button a {
   text-align: center;
   width: 100%;
-} 
+}
 
-/* 
+/*
 ---------------------------------------------
 Other Related Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .other-games {
@@ -1441,10 +1441,10 @@ Other Related Style
   color: #ecb460;
 }
 
-/* 
+/*
 ---------------------------------------------
 Top Streamers Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .top-streamers {
@@ -1506,10 +1506,10 @@ Top Streamers Style
   padding: 8px 20px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Profile Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .main-profile {
@@ -1622,10 +1622,10 @@ Profile Style
   text-align: center;
 }
 
-/* 
+/*
 ---------------------------------------------
 Responsive Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 body {
@@ -1633,7 +1633,7 @@ body {
 }
 
 @media (max-width: 767px) {
-  body .page-content {
+  body .page-content_home {
     padding: 0px 30px;
   }
   .main-banner {
@@ -1724,3 +1724,14 @@ body {
     width: 16%;
   }
 }
+
+
+
+.page-content_home {
+  transform: scale(0.62); /* Réduit à 90% de sa taille */
+}
+
+ .page-content_home  {
+  margin: 110px auto; /* Centre horizontalement */
+}
+

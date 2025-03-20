@@ -47,20 +47,20 @@ const ChatManager = (() => {
 
   const createFriendElement = (friend) => {
     return `
-		<li class="selectable-item friend" 
+		<li class="selectable-item friend"
     data-id="${friend.id}"
     data-name="${friend.name || "Unnamed"}"
     data-authid="${friend.auth_user_id}"
     data-authname="${friend.auth_user_name}">
     <div class="avatarContainer">
-    <img src="${friend.imageURL || "default-avatar.jpg"}" 
-    class="avatar" 
+    <img src="${friend.imageURL || "default-avatar.jpg"}"
+    class="avatar"
     alt="${friend.name || "No avatar"}">
     </div>
     ${friend.name || "Unnamed"}
-    <span class="connected-icon connected connected${friend.id}" 
+    <span class="connected-icon connected connected${friend.id}"
 				style="display: ${friend.isOnline ? "block" : "none"}">🟢</span>
-		  <span class="notification-bell notification${friend.id}" 
+		  <span class="notification-bell notification${friend.id}"
       style="display: none">🔔</span>
       </li>
       `;
@@ -126,7 +126,7 @@ const ChatManager = (() => {
         `https://${window.location.host}/api/check_block_status/?id=${friendId}`,
         {
           method: "GET",
-          credentials: "include", // Include cookies for authentication if required
+          credentials: "include",
           headers: {
             "Content-Type": "application/json",
           },
@@ -146,7 +146,7 @@ const ChatManager = (() => {
       return data.is_blocked;
     } catch (error) {
       console.error("Error fetching block status:", error);
-      return false; 
+      return false;
     }
   };
   const blockFriend = async (friendId) => {
@@ -621,17 +621,17 @@ const ChatManager = (() => {
       const bfriend = await isBlockFriend(receiver);
 
 
-      if (!bfriend) 
+      if (!bfriend)
       {
-        if (e.keyCode === 13 && activeChatSelected) 
+        if (e.keyCode === 13 && activeChatSelected)
         {
-          await handleMessageSend(messageInput); 
+          await handleMessageSend(messageInput);
         }
       } else {
         const imge = document.getElementById("contact-image");
         fun_sign.initFeedBack();
         fun_sign.alert_message("the user is blocked");
-      
+
         removeFriendElement(receiver);
         deleteAll("chat-window");
         const img = document.getElementById("contact-image");
@@ -654,14 +654,14 @@ const ChatManager = (() => {
       messagesend.onclick = async () => {
         const bfriend = await isBlockFriend(receiver);
         if (!bfriend) {
-          if (activeChatSelected) await handleMessageSend(messageInput); 
+          if (activeChatSelected) await handleMessageSend(messageInput);
         } else {
           removeFriendElement(receiver);
           deleteAll("chat-window");
           const img = document.getElementById("contact-image");
           img.src = "";
           img.alt = "";
-          const panelOptions = document.querySelectorAll("a.chat-button"); 
+          const panelOptions = document.querySelectorAll("a.chat-button");
           panelOptions.forEach((option) => {
             option.remove();
           });

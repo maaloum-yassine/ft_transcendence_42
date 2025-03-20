@@ -1,57 +1,4 @@
 
-  <header class="header-area header-sticky">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-            <a href="/home" class="logo">
-              <img src="images/TR-logo.png" alt="" />
-            </a>
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-              <li>
-                <a href="/home" 
-                  >Home <img src="images/home.png" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="/profile"
-                  >Profile <img src="images/profile-header.jpg" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="/friend"
-                  >Friends <img src="images/friends-icon.png" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="/chat"
-                  >Messages <img src="images/message.png" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="/edit"
-                  >Settings <img src="images/settings.png" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="/" id="logoutLink">
-                  Log out <img src="images/logout.png" alt="logout" />
-                </a>
-              </li>
-            </ul>
-            <a class="menu-trigger">
-              <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-
 
 <div id="signInFeedbackContainer">
   <div id="signInFeedBackHolder">
@@ -65,90 +12,80 @@
 </div>
 
 
+<div class="background-circles"></div>
+<div class="ball"></div>
 
-	<div class="edit-container">
-	<h2>Account settings</h2>
+<div class="edit-container">
+	<div class="header-container">
+		<a href="/profile"  class="back-button" title="Return to Profile">
+			&#8592;
+		</a>
+		<h2>Account settings</h2>
+</div>
 
-	<!-- Section Informations Utilisateur -->
+	<!-- Personal Information Section -->
 	<div class="profile-section">
 		<h3>Personal Information</h3>
 		<form id="userInfoForm">
-		<div class="input-group">
-			<input
-			type="text"
-			id="Username_edit"
-			placeholder="username"
-			required
-			/>
-			<input type="text" id="FirstName_edit" placeholder="last name" required />
-		</div>
-		<div class="input-group">
-			<input type="text" id="LastName_edit" placeholder="first name" required />
-			<input type="email" id="email_edit" placeholder="email" required />
-		</div>
-		<button type="button" id="updateUserInfoBtn">
-			Update information
-		</button>
+			<div class="input-group">
+				<input type="text" id="Username_edit" placeholder="Username" required />
+				<input type="text" id="FirstName_edit" placeholder="First name" required />
+			</div>
+			<div class="input-group">
+				<input type="text" id="LastName_edit" placeholder="Last name" required />
+				<input type="email" id="email_edit" placeholder="Email" required />
+			</div>
+			<button type="button" id="updateUserInfoBtn">
+				Update information
+			</button>
 		</form>
 	</div>
 
-	<!-- Section Photo de Profil -->
+	<!-- Profile Picture Section -->
 	<div class="profile-section">
-		<h3>Photo de Profil</h3>
-		<img id="profilePhoto" src="" class="profile-photo" />
+		<h3>Profile Picture</h3>
+		<img id="profilePhoto" src="/api/placeholder/120/120" class="profile-photo" alt="Profile Photo" />
 		<button id="openImageModal">Change profile picture</button>
 	</div>
 
-	<!-- Section Sécurité -->
+	<!-- Security Section -->
 	<div class="profile-section">
 		<h3>Security</h3>
 		<div class="input-group">
-		<input
-			type="password"
-			id="Password_edit"
-			placeholder="nouveau password"
-		/>
-		<input
-			type="password"
-			id="Confirm_Password_edit"
-			placeholder="Confirm password"
-		/>
+			<input type="password" id="Password_edit" placeholder="New password" />
+			<input type="password" id="Confirm_Password_edit" placeholder="Confirm password" />
 		</div>
 		<button id="updatePasswordBtn">Update Password</button>
 		<button id="openTwoFactorModal">
-		Set up two-factor authentication
+			Set up two-factor authentication
 		</button>
 	</div>
-	</div>
+</div>
 
-	<!-- Modal Photo de Profil -->
-	<div id="imageUploadModal" class="modal">
+<!-- Profile Picture Modal -->
+<div id="imageUploadModal" class="modal">
 	<div class="modal-content">
 		<span class="modal-close">&times;</span>
 		<h2>Profile Picture</h2>
 		<div class="modal-description">
-		<button id="openImageUploadBtn">Click to select an image</button>
-		<input
-			type="file"
-			id="photoUpload"
-			accept="image/*"
-			style="margin: 20px 0"
-		/>
+			<button id="openImageUploadBtn">Click to select an image</button>
+			<input type="file" id="photoUpload" accept="image/*" style="margin: 20px 0" />
 		</div>
 		<div class="modal-actions">
-		<button id="uploadProfileImage">Télécharger</button>
+			<button id="uploadProfileImage">Upload</button>
 		</div>
 	</div>
-	</div>
+</div>
 
-	<div id="twoFactorModal" class="modal">
+<!-- Two-Factor Modal -->
+<div id="twoFactorModal" class="modal">
 	<div class="modal-content">
 		<span class="modal-close">&times;</span>
 		<h2>Two-Factor Authentication (2FA)</h2>
 		<div class="modal-actions">
-		<!-- <button id="activateTwoFactor">Activer</button> -->
-		<button id="deactivateTwoFactor">Désactiver</button>
+			<button id="deactivateTwoFactor">Deactivate</button>
 		</div>
 	</div>
-	</div>
 </div>
+
+

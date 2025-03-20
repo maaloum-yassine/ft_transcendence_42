@@ -1,16 +1,9 @@
 import fun_sign from "./signin.js";
 import { urlLocationHandler } from "./url-router.js";
 
-const edit = () => {
-  const logoLink = document.querySelector(".logo");
 
-  if (logoLink) {
-    logoLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      history.pushState(null, "", "/home");
-      urlLocationHandler();
-    });
-  }
+
+const edit = () => {
   fun_sign.initFeedBack();
   const profilePhoto = document.getElementById("profilePhoto");
   const openImageModal = document.getElementById("openImageModal");
@@ -51,9 +44,6 @@ const edit = () => {
         } else {
           deactivateTwoFactor.textContent = "Activate";
         }
-
-        // if (data.data.active_2fa == true) activateTwoFactor.disabled = true;
-        // else deactivateTwoFactor.disabled = true;
 
         if (profilePhoto && data.data.avatar) {
           const avatarUrl = data.data.avatar;

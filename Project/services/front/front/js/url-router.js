@@ -18,6 +18,24 @@ import { initTournament } from "./tournament.js";
 import fetchAndRenderProfile from "./friend_profile.js";
 import BlockedUserManager from "./deblock.js";
 
+
+
+function keepOnlyThisCSS(cssFileName) {
+  document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+      if (!link.href.includes(cssFileName)) {
+          link.disabled = true;
+      } else {
+          link.disabled = false;
+      }
+  });
+}
+
+function enableAllCSS() {
+  document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+      link.disabled = false;
+  });
+}
+
 document.addEventListener("click", (e) => {
   const { target } = e;
   if (!target.matches("a")) {
@@ -108,8 +126,7 @@ const urlRoutes = {
     title: "chat",
     description: "chat",
   },
-
-  "/friends_mode": {
+ "/friends_mode": {
     template: "/templates/friends_mode/friends_mode.html",
     title: "Friends Mode Pong",
     description: "Play Pong with Friends",
@@ -141,33 +158,26 @@ const urlRoutes = {
   },
 };
 
-
 const urlRoute = (event) => {
   event = event || window.event;
   event.preventDefault();
 
   const targetUrl = event.target.href || window.location.href;
   const path = new URL(targetUrl).pathname.toLowerCase();
-  const searchParams = new URLSearchParams(new URL(targetUrl).search); // Récupère les paramètres de l'URL
-  const id = searchParams.get("id"); // Récupère le paramètre 'id' de l'URL
-
-  console.log("ID Param: ", id); // Vérifie l'ID dans la console
-
-  // Si un paramètre 'id' est présent dans l'URL
+  const searchParams = new URLSearchParams(new URL(targetUrl).search);
+  const id = searchParams.get("id");
   if (id) {
-    // Vérifie si l'URL actuelle est différente et inclut l'ID
     if (
       window.location.pathname !== path ||
       window.location.search !== `?id=${id}`
     ) {
-      window.history.pushState({}, "", `${path}?id=${id}`); // Met à jour l'URL avec l'ID
-      urlLocationHandler(path, id); // Passe l'ID à la fonction de traitement de la route
+      window.history.pushState({}, "", `${path}?id=${id}`);
+      urlLocationHandler(path, id);
     }
   } else {
-    // Si l'ID n'est pas présent, laisse l'URL sans modification du paramètre 'id'
     if (window.location.pathname !== path || window.location.search !== "") {
-      window.history.pushState({}, "", path); // Met à jour l'URL sans 'id'
-      urlLocationHandler(path); // Appelle la fonction sans l'ID
+      window.history.pushState({}, "", path);
+      urlLocationHandler(path);
     }
   }
 };
@@ -242,7 +252,6 @@ const urlLocationHandler = async (
   const isAuthenticated = await check_authenticate();
 
   let route = urlRoutes[location] || urlRoutes["/404"]; // Route par défaut : 404
-
   if (location !== "/password_reset_confirm") {
     if (route !== urlRoutes["/404"]) {
       if (isAuthenticated === "1") {
@@ -254,17 +263,16 @@ const urlLocationHandler = async (
       } else if (isAuthenticated === "0") {
         if (!isNotAuthenticatedRoute(location)) location = "/signin";
       }
-
-      // Update the history state only if the location has changed
       if (window.location.pathname !== location) {
         history.pushState(null, null, location);
       }
     } else {
       location = "/404";
       history.pushState(null, null, location);
+      keepOnlyThisCSS("style_404");
     }
 
-    route = urlRoutes[location]; // Get the route
+    route = urlRoutes[location];
   } else {
     if (isAuthenticated === "1") {
       location = "/profile";
@@ -272,36 +280,43 @@ const urlLocationHandler = async (
     }
   }
 
-  const html = await fetch(route.template).then((response) => response.text());
-  document.getElementById("content").innerHTML = html; // Replace content
 
+  const html = await fetch(route.template).then((response) => response.text());
+  document.getElementById("content").innerHTML = html;
+  if (location === "/404")
+    return ;
   handlePageScripts(location, friendProfileId);
 };
 
-// Handle the specific scripts for each page
 function handlePageScripts(location, friendProfileId = null) {
   const pageSelected = urlRoutes[location].template
     .split("/")
     .pop()
     .toLowerCase();
-
+   enableAllCSS();
   if (pageSelected === "signin.html") {
+    keepOnlyThisCSS("style_signin");
     fun_sign.initSignIn();
   } else if (pageSelected === "signup.html") {
+    keepOnlyThisCSS("style_signup");
     fun_signup.initSignUp();
   } else if (pageSelected === "verify.html") {
     fun_verfiy.initVerifying();
   } else if (pageSelected === "password_reset.html") {
+    keepOnlyThisCSS("rest_password");
     initResetPassword();
   } else if (pageSelected === "password_reset_confirm.html") {
+    keepOnlyThisCSS("rest_password");
     fun_verfiy.initResetPassConfirm();
   } else if (pageSelected === "twofa.html") {
+    keepOnlyThisCSS("style_twofa");
     initTwoFA();
   } else if (pageSelected === "profile.html") {
     custom();
     initProfile();
     logout();
   } else if (pageSelected === "edit.html") {
+    keepOnlyThisCSS("style_edit");
     edit();
     logout();
   } else if (pageSelected === "home.html") {
@@ -314,13 +329,15 @@ function handlePageScripts(location, friendProfileId = null) {
     initProfile();
     logout();
   } else if (pageSelected === "tictactoe.html") {
+    keepOnlyThisCSS("styles_tictactoe");
     run();
     logout();
   } else if (pageSelected === "chat.html") {
+    keepOnlyThisCSS("chat");
     ChatManager.initialize();
     logout();
   } else if (pageSelected === "friend_profile.html") {
-      custom();
+    custom();
     initProfile();
     if (friendProfileId) {
       fetchAndRenderProfile(friendProfileId);
@@ -332,16 +349,16 @@ function handlePageScripts(location, friendProfileId = null) {
   } else if (pageSelected === "create_friends_game.html") {
     CGR_();
   } else if (pageSelected === "tournament.html") {
+    keepOnlyThisCSS("tournament_style");
     initTournament();
   }  else if (pageSelected === "deblock_page.html")
     BlockedUserManager.initialize();
 }
-// On popstate (back and forward buttons)
+
 window.onpopstate = () => {
-  urlLocationHandler(window.location.pathname); // Load the page corresponding to the URL
+  urlLocationHandler(window.location.pathname);
 };
 
-// Initial route handling
 urlLocationHandler(window.location.pathname.toLowerCase());
 
 export { urlLocationHandler };

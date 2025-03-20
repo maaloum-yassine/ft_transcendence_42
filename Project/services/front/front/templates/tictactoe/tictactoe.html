@@ -12,64 +12,19 @@
     <link rel="shortcut icon" href="#" />
   </head>
   <body> -->
-<header class="header-area header-sticky">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <nav class="main-nav">
-          <!-- ***** Logo Start ***** -->
-          <a href="/home" class="logo">
-            <img src="images/TR-logo.png" alt="" />
-          </a>
-          <!-- ***** Logo End ***** -->
-          <!-- ***** Menu Start ***** -->
-          <ul class="nav">
-            <li>
-              <a href="/home" 
-                >Home <img src="images/home.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="/profile"
-                >Profile <img src="images/profile-header.jpg" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="/friend"
-                >Friends <img src="images/friends-icon.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="/chat"
-                >Messages <img src="images/message.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="/edit"
-                >Settings <img src="images/settings.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="/" id="logoutLink">
-                Log out <img src="images/logout.png" alt="logout" />
-              </a>
-            </li>
-          </ul>
-          <a class="menu-trigger">
-            <span>Menu</span>
-          </a>
-          <!-- ***** Menu End ***** -->
-        </nav>
-      </div>
+    <div class="edit-container">
+      <div class="header-container">
+        <center><h2>Profile</h2> </center>
+        <a href="/profile"  class="back-button" title="Return to profile">
+          &#8594;
+        </a>
     </div>
-  </div>
-</header>
-</header>
+
 <div class="game-container">
   <div class="game-wrapper">
     <h1 class="game-title">TicTacToe</h1>
 
-    <div class="game-interface">    
+    <div class="game-interface">
       <div id="status" class="game-status">READY PLAYER</div>
 
       <div id="game-board" class="game-board pixel-border">
@@ -100,7 +55,7 @@
         <div id="chart-container" class="pixel-border">
           <canvas id="statsChart"></canvas>
         </div>
-        
+
       </div>
       <div id="game-list" class="game-list pixel-border"></div>
     </div>

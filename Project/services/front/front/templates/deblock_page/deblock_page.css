@@ -19,29 +19,26 @@
 }
 /* Example CSS for user images */
 .user-image {
-    width: 84px;
-	height: 84px;
+    width: 100px;
+	height: 100px;
 	border-radius: 50%;
 	object-fit: cover;
 	margin-right: 10px;
   }
-  
+
   /* Style for blocked users list */
   .blocked-user {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
   }
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-  }
-  
+
+
+
   .actions {
     margin-left: auto; /* Align buttons to the right */
   }
-  
+
   button {
     margin-left: 10px;
     padding: 5px 10px;
@@ -51,25 +48,25 @@
     cursor: pointer;
     border-radius: 5px;
   }
-  
+
   button:hover {
     background-color: rgb(77, 77, 77);
   }
-  
+
 /* Centered container-friend */
 .container-friend {
     position: relative;
-    background-color: #1f2122; /* Vibrant orange */
-    padding: 70px;
+    background-color: #1f2122;
+    padding: 35px;
     border-radius: 23px;
-    box-shadow: 0 15px 40px rgba(255, 140, 0, 0.6);
+    /* box-shadow: 0 15px 40px rgba(255, 140, 0, 0.6); */
     text-align: center;
-    width: 680px; /* Full width */
+    /* width: 680px; */
     /* max-width: 2000px; */
     z-index: 1;
     backdrop-filter: blur(12px);
-	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-	transition: box-shadow 0.3s ease;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
 }
 
 .container-friend:hover {
@@ -172,27 +169,6 @@
     box-shadow: 0 8px 20px rgba(239, 72, 72, 0.5);
 }
 
-/* Search Input */
-#search-input {
-    padding: 4px;
-  	border: 3px solid rgba(255, 255, 255, 0.8);
-  	border-radius: 15px;
-  	font-size: 19px;
-  	width: 74%;
-  	max-width: 1800px;
-  	background: rgba(255, 255, 255, 0.9);
-  	color: #000;
-  	outline: none;
-  	margin-bottom: 42px;
-  	transition: all 0.3s ease-in-out;
-  	margin-top: 10%;
-}
-
-#search-input:focus {
-    border-color: rgba(255, 140, 0, 1);
-    box-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
-    transform: translateY(-3px);
-}
 
 /* Toggle Button */
 .toggle-btn {
@@ -216,3 +192,30 @@
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 140, 0, 0.6);
 }
+
+
+/* Search Input */
+
+#search-input {
+    padding: 4px;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    font-size: 19px;
+    width: 74%;
+    max-width: 1800px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    outline: none;
+    margin-bottom: 42px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10%;
+    height: 60px;
+    font-size: 30px;
+}
+#search-input:focus {
+    border-color: rgba(255, 140, 0, 1);
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
+    transform: translateY(-3px);
+}
+
+

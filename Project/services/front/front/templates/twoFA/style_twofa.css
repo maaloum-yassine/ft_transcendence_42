@@ -1,0 +1,210 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+}
+
+.background-circles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.2), transparent 70%);
+  border-radius: 50%;
+  animation: pulse 3s infinite;
+  z-index: 0;
+}
+
+.ball {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: orange;
+  border-radius: 50%;
+  z-index: -1;
+  animation: bounceBall 10s infinite linear;
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.8);
+}
+
+@keyframes bounceBall {
+  0% {
+    top: 10%;
+    left: 10%;
+    transform: translate(0, 0);
+  }
+  25% {
+    top: 90%;
+    left: 90%;
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  50% {
+    top: 10%;
+    left: 90%;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  75% {
+    top: 90%;
+    left: 10%;
+    transform: translate(-50%, -50%) rotate(540deg);
+  }
+  100% {
+    top: 10%;
+    left: 10%;
+    transform: translate(0, 0) rotate(720deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.two-fa-container {
+  position: relative;
+  background-color: rgb(81 52 16 / 90%);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(255, 140, 0, 0.3);
+  text-align: center;
+  width: 500px;
+  z-index: 1;
+  backdrop-filter: blur(8px);
+}
+
+.typing {
+  color: #000;
+  border-right: 0.15rem solid orange;
+  font-size: 2.2em;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1s steps(20, end) 1, blink 0.75s step-end infinite;
+  margin-bottom: 30px;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: orange;
+  }
+}
+
+.code-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.code-input {
+  width: 40px;
+  height: 60px;
+  text-align: center;
+  font-size: 24px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
+}
+
+.code-input:focus {
+  outline: none;
+  border-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.two-fa-container button {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0 20px;
+  background-color: #000;
+  border: none;
+  border-radius: 10px;
+  color: orange;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.two-fa-container button:hover {
+  background-color: #222;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+#signInFeedbackContainer {
+  position: absolute;
+  background-color: rgba(2, 2, 2, 0.604);
+  width: 100svw;
+  height: 100svh;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+#signInFeedbackContainer #signInFeedBackHolder {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 410px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#signInFeedbackContainer #signInFeedBackHolder h2 {
+  font-size: 20px;
+  color: snow;
+  font-family: sans-serif;
+}
+#signInFeedbackContainer #signInFeedBackHolder p {
+  color: orange;
+  font-family: sans-serif;
+}
+#signInFeedbackContainer #signInFeedBackHolder button {
+  padding: 10px 65px;
+  background: none;
+  border: none;
+  outline-color: orange;
+  color: white;
+  background-color: orange;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: scale 100ms ease-in-out;
+}
+#signInFeedbackContainer #signInFeedBackHolder button:active {
+  scale: 0.9;
+}

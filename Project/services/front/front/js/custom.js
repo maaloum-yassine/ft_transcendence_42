@@ -1,15 +1,8 @@
 import { urlLocationHandler } from "./url-router.js";
 
-const custom = () => {
-  const logoLink = document.querySelector(".logo");
 
-  if (logoLink) {
-    logoLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      history.pushState(null, "", "/home");
-      urlLocationHandler();
-    });
-  }
+
+const custom = () => {
   (function ($) {
     "use strict";
 
@@ -308,6 +301,8 @@ const custom = () => {
       });
     }
   })(window.jQuery);
+
+
 };
 
 export default custom;

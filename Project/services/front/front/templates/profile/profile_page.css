@@ -111,7 +111,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   background-color: #1e1e1e;
-  font-size: 16px;
+  font-size: 30px;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -152,10 +152,10 @@ img {
   overflow: hidden;
 }
 
-/* 
+/*
 ---------------------------------------------
 Global Styles
---------------------------------------------- 
+---------------------------------------------
 */
 html,
 body {
@@ -172,7 +172,7 @@ body .page-content {
 }
 
 p {
-  font-size: 15px;
+  font-size: 20px;
   color: #666;
   line-height: 30px;
   margin-bottom: 0px;
@@ -194,7 +194,7 @@ p {
 }
 
 .main-button a {
-  font-size: 14px;
+  font-size: 20px;
   color: #fff;
   background-color: orange;
   padding: 12px 30px;
@@ -214,7 +214,7 @@ p {
 }
 
 .main-border-button a {
-  font-size: 14px;
+  font-size: 20px;
   color: #ecb460;
   background-color: transparent;
   border: 1px solid #ecb460;
@@ -252,7 +252,7 @@ section {
 
 .heading-section h4 {
   color: #ecb460;
-  font-size: 34px;
+  font-size: 40px;
   text-decoration: none;
   margin-bottom: 30px;
 }
@@ -263,10 +263,10 @@ section {
   text-decoration: underline;
 }
 
-/* 
+/*
 ---------------------------------------------
 Pre-loader Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .js-preloader {
@@ -363,10 +363,10 @@ Pre-loader Style
   border-radius: 50%;
 }
 
-/* 
+/*
 ---------------------------------------------
 Header Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .background-header {
@@ -421,7 +421,7 @@ Header Style
   border-radius: 23px;
   border: none;
   color: #666;
-  font-size: 14px;
+  font-size: 22px;
   padding: 0px 15px 0px 45px;
 }
 
@@ -432,7 +432,7 @@ Header Style
   top: 16px;
   width: 18px;
   height: 18px;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 .header-area .main-nav .logo {
@@ -482,7 +482,7 @@ Header Style
 .header-area .main-nav .nav li a {
   display: block;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 10px;
   text-transform: capitalize;
   color: #666;
   -webkit-transition: all 0.3s ease 0s;
@@ -782,7 +782,7 @@ Header Style
     transition: all 0s;
   }
   .header-area .main-nav .nav li.submenu ul li a {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 400;
   }
   .header-area .main-nav .nav li.submenu ul li a:hover:before {
@@ -803,10 +803,10 @@ Header Style
   }
 }
 
-/* 
+/*
 ---------------------------------------------
 Banner Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .main-banner {
@@ -842,10 +842,10 @@ Banner Style
   color: #ecb460;
 }
 
-/* 
+/*
 ---------------------------------------------
 Most Popular Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .most-popular {
@@ -917,10 +917,10 @@ Most Popular Style
   margin-bottom: -53px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Gaming Library Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .gaming-library {
@@ -989,10 +989,10 @@ Gaming Library Style
   margin-bottom: -53px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Footer Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 footer p {
@@ -1011,10 +1011,10 @@ footer p a:hover {
   color: #ecb460;
 }
 
-/* 
+/*
 ---------------------------------------------
 Featured Games Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .featured-games {
@@ -1106,15 +1106,6 @@ Featured Games Style
   margin-left: 2.5px;
 }
 
-.featured-games .owl-nav .owl-prev span,
-.featured-games .owl-nav .owl-next span {
-  font-size: 36px;
-  display: inline-block;
-  color: #666;
-  opacity: 1;
-  transition: all 0.3s;
-}
-
 .featured-games .owl-nav .owl-prev span:hover,
 .featured-games .owl-nav .owl-next span:hover {
   opacity: 1;
@@ -1189,10 +1180,10 @@ Featured Games Style
   font-size: 15px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Start Stream Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .start-stream .heading-section {
@@ -1219,10 +1210,10 @@ Start Stream Style
   margin-top: 30px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Live Stream Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .live-stream {
@@ -1322,10 +1313,10 @@ Live Stream Style
   margin-bottom: -53px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Featured Banner Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .feature-banner .thumb {
@@ -1350,10 +1341,10 @@ Featured Banner Style
   color: #ecb460;
 }
 
-/* 
+/*
 ---------------------------------------------
 Game Details Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .game-details h2 {
@@ -1381,7 +1372,7 @@ Game Details Style
 }
 
 .game-details .content .left-info h4 {
-  font-size: 15px;
+  font-size: 30px;
   display: block;
 }
 
@@ -1447,10 +1438,10 @@ Game Details Style
   width: 100%;
 }
 
-/* 
+/*
 ---------------------------------------------
 Other Related Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .other-games {
@@ -1505,10 +1496,10 @@ Other Related Style
   color: #ecb460;
 }
 
-/* 
+/*
 ---------------------------------------------
 Top Streamers Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .top-streamers {
@@ -1570,10 +1561,10 @@ Top Streamers Style
   padding: 8px 20px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Profile Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .main-profile {
@@ -1691,10 +1682,10 @@ Profile Style
   text-align: center;
 }
 
-/* 
+/*
 ---------------------------------------------
 Responsive Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 body {
@@ -1793,3 +1784,14 @@ body {
     width: 16%;
   }
 }
+
+
+ .page-contente{
+  transform: scale(0.77); /* Réduit à 90% de sa taille */
+}
+
+ .page-contente {
+  margin: 110px auto; /* Centre horizontalement */
+}
+
+

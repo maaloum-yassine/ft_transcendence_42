@@ -1,4 +1,18 @@
+import { urlLocationHandler } from "./url-router.js";
+
 function run() {
+
+
+  const element = document.getElementById("home_tic");
+  if (element) {
+    alert("I m here 1337");
+    element.addEventListener("click", (e) => {
+      e.preventDefault();
+      history.pushState(null, "", "/home");
+      urlLocationHandler();
+    });
+  }
+
   const apiBaseUrl = `https://${window.location.host}/api/tictactoe-api`;
   const gameBoard = document.getElementById("game-board");
   const statusElement = document.getElementById("status");
@@ -88,7 +102,7 @@ function run() {
 
   function displayStatsChart(stats) {
     const ctx = document.getElementById("statsChart").getContext("2d");
-    
+
     if (statsChart) {
       statsChart.destroy();
     }
@@ -301,7 +315,7 @@ function run() {
           credentials: "include",
         }
       );
-      
+
       if (!userData.ok) {
         throw new Error(
           `Authentication failed! Status: ${userData.status}`
@@ -450,7 +464,7 @@ function run() {
       statusElement.textContent = "It's a draw!";
       winnerSymbol = "D";
     }
- 
+
     isMyTurn = false;
 
     const updatePayload = {
@@ -552,7 +566,7 @@ function run() {
         case "game_end":
           console.log("Game ended. Updating board:", message.board_state);
           renderBoard(message.board_state);
-          handleGameEnd(message.winner); 
+          handleGameEnd(message.winner);
           break;
 
         case "error":

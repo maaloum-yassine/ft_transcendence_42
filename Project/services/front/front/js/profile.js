@@ -1,14 +1,6 @@
 import { urlLocationHandler } from "./url-router.js";
 
 const initProfile = () => {
-    const logoLink = document.querySelector(".logo");
-    if (logoLink) {
-        logoLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            history.pushState(null, "", "/home");
-            urlLocationHandler();
-        });
-    }
 
     const gamesPlayed = document.getElementById("Games_Played");
     const winned = document.getElementById("Winned");
@@ -16,7 +8,7 @@ const initProfile = () => {
     const username_pp = document.getElementById("username_pp"); // Added for username display
     const avatar_user = document.getElementById("avatar_user"); // Added for username display
     const url = `https://${window.location.host}/api/badr_game_stats/`;
-    
+
     fetch(url, {
         method: "POST",
         headers: {
@@ -39,7 +31,7 @@ const initProfile = () => {
         if (winned) winned.textContent = data.wins;
         if (losed) losed.textContent = data.losses;
         if (username_pp) username_pp.textContent = data.user;
-        if (avatar_user) 
+        if (avatar_user)
         {
           avatar_user.style.display = "block";
           avatar_user.src = data.avatar;
@@ -50,9 +42,9 @@ const initProfile = () => {
     });
 
 
-    
+
     const gamingLibraryContainer = document.querySelector('.gaming-library');
-    
+
     // Ensure the container exists
     if (!gamingLibraryContainer) {
         console.error('Gaming library container not found');
@@ -83,7 +75,7 @@ const initProfile = () => {
           games.forEach((game) => {
               const gameItem = document.createElement('div');
               gameItem.classList.add('item');
-              
+
               // Add the content for each match
               gameItem.innerHTML = `
                   <ul>
@@ -117,7 +109,7 @@ const initProfile = () => {
       console.error("Error fetching game stats:", error);
   });
     // Detailed logging function
-   
+
 };
 
 export default initProfile;

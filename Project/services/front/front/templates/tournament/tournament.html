@@ -1,42 +1,42 @@
 <div id="tournamentContainer">
-    <div id="tournamentStepsContainer">
-      <div class="stepHolder">
-        <div class="tournamentCard">
-          <h2>Create Tournament</h2>
-          <p>Create tournament and add players</p>
-          <button id="createTournament">Create</button>
-        </div>
+  <div id="tournamentStepsContainer">
+    <div class="stepHolder">
+      <div class="tournamentCard">
+        <h2>Tournament</h2>
+        <p id="Pp">Create a tournament and add players</p>
+        <button id="createTournament">Create</button>
       </div>
-      <div class="stepHolder" id="addPlayerContainer">
-        <form id="addPlayerForm">
-          <h2>Add player</h2>
-          <input  class="tournamentEmailInput" type="text" placeholder="User name 1"/>
-          <input  class="tournamentEmailInput" type="text" placeholder="User name 2"/>
-          <input  class="tournamentEmailInput" type="text" placeholder="User name 3"/>
-          <input  class="tournamentEmailInput" type="text" placeholder="User name 4"/>
-          <button>Start</button>
-        </form>
+    </div>
+    <div class="stepHolder" id="addPlayerContainer">
+      <form id="addPlayerForm">
+        <h2>Add players</h2>
+        <input class="tournamentEmailInput" type="text" placeholder="Player 1 Name"/>
+        <input class="tournamentEmailInput" type="text" placeholder="Player 3 Name"/>
+        <input class="tournamentEmailInput" type="text" placeholder="Player 3 Name"/>
+        <input class="tournamentEmailInput" type="text" placeholder="Player 4 Name"/>
+        <button>To start</button>
+      </form>
+    </div>
+    <div class="stepHolder" id="gameInterface">
+      <div class="score-board">
+        <span class="playerInfosHolder">
+          <span id="player1NickName">Joueur 1</span>
+          <span id="player1Score">0</span>
+        </span>
+        <span id="vs">VS</span>
+        <span class="playerInfosHolder">
+          <span id="player2Score">0</span>
+          <span id="Player2NickName">Joueur 2</span>
+        </span>
       </div>
-      <div class="stepHolder" id="gameInterface">
-        <div class="score-board">
-          <span class="playerInfosHolder">
-              <span id="player1NickName">...</span>
-              <span id="player1Score">0</span>
-          </span>
-          <span id="vs">VS</span>
-          <span class="playerInfosHolder">
-              <span id="player2Score">0</span>
-              <span id="Player2NickName">...</span>
-          </span>
-        </div>
-        <canvas id="gameCanvas" width="800" height="400"></canvas>
-      </div>
-      <div class="stepHolder">
-        <div id="winnerContainer">
-          <h2>We have a winner</h2>
-          <span id="winnerNickName">...</span>
-          <a href="/" data-link>Go home</a>
-        </div>
+      <canvas id="gameCanvas" width="800" height="400"></canvas>
+    </div>
+    <div class="stepHolder">
+      <div id="winnerContainer">
+        <h2>We have a winner</h2>
+        <span id="winnerNickName">...</span>
+        <a href="/" data-link>Back to home</a>
       </div>
     </div>
   </div>
+</div>

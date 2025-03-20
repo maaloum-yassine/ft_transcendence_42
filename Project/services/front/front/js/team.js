@@ -1,8 +1,6 @@
 
-
-
 const team = () => {
- 
+
 var swiper = new Swiper(".swiper", {
 	grabCursor: true,
 	initialSlide: 4,
@@ -23,8 +21,24 @@ var swiper = new Swiper(".swiper", {
 	  },
 	},
   })
- 
- 
+  const profilePhoto = document.getElementById("profilePhoto");
+  fetch(`https://${window.location.host}/api/profile/`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (profilePhoto && data.data.avatar) {
+          profilePhoto.src = data.data.avatar;
+          profilePhoto.style.display = "block";
+      }
+    })
+    .catch(() => {
+      console.log("Error Upload Avatar")
+    });
 };
 
 export default team;

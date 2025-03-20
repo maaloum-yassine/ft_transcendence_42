@@ -5,19 +5,15 @@ networks:
     driver: bridge
 
 volumes:
-  web_data:
-    driver: local
-  db_data:
-    driver: local
-  front_data:
+  postgres_data:
     driver: local
   static_volume:
 
 services:
   backend:
-    container_name: container_user_managemant
+    container_name: backend_django
     build:
-      context: ./services/user_management/
+      context: ./services/backend/
       dockerfile: Dockerfile
     depends_on:
       - postgres
@@ -32,14 +28,14 @@ services:
     env_file:
       - .env
     volumes:
-      - web_data:/app/
+      - ./services/backend/Ft_transcendence:/app/
       - static_volume:/app/media/avatars
-
   postgres:
-    container_name: container_postgres
+    container_name: postgres_db
     build:
       context: ./services/postgres/
       dockerfile: Dockerfile
+    image: postgres
     restart: always
     networks:
       - transcendence
@@ -48,13 +44,14 @@ services:
     env_file:
       - .env
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - ./services/postgres/postgresql_data:/var/lib/postgresql/data
 
   redis:
-    container_name: container_redis
+    container_name: redis_cache
     build:
       context: ./services/redis/
       dockerfile: Dockerfile
+    image: redis
     restart: always
     networks:
       - transcendence
@@ -64,10 +61,11 @@ services:
       - .env
 
   nginx:
-    container_name: nginx
+    container_name: nginx_serweb
     build:
       context: ./services/front/
       dockerfile: Dockerfile
+    image: nginx
     restart: always
     networks:
       - transcendence
@@ -81,6 +79,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - front_data:/var/www/html/
+      - ./services/front/front:/var/www/html/
       - static_volume:/var/www/html/media/avatars
+
 # docker rm -f $(docker ps -aq) && docker rmi $(docker images -q) &&  docker volume prune && docker compose down -v
